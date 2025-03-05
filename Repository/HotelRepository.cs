@@ -32,7 +32,7 @@ namespace Repository
         public async Task<PaginatedList<Hotel>> GetAllHotelsAsync(int pageIndex, int pageSize, bool trackChanges)
         {
             var query = trackChanges ? _context.Hotels : _context.Hotels.AsNoTracking();
-            return await PaginatedList<Hotel>.CreateAsync(_context.Hotels.AsQueryable(), pageIndex, pageSize);
+            return await PaginatedList<Hotel>.CreateAsync(query.AsQueryable(), pageIndex, pageSize);
         }
 
        
