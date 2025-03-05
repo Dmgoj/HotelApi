@@ -40,8 +40,8 @@ namespace Repository
         public async Task<Hotel> GetHotelAsync(int hotelId, bool trackChanges)
         {
             return await _context.Hotels
-        .AsTracking(trackChanges ? QueryTrackingBehavior.TrackAll : QueryTrackingBehavior.NoTracking)
-        .FirstOrDefaultAsync(h => h.Id == hotelId);
+            .AsTracking(trackChanges ? QueryTrackingBehavior.TrackAll : QueryTrackingBehavior.NoTracking)
+            .FirstOrDefaultAsync(h => h.Id == hotelId);
         }
 
         public Task UpdateHotelAsync(Hotel hotel)
