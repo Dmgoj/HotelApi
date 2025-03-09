@@ -1,6 +1,45 @@
 @HotelApi_HostAddress = http://localhost:5184
 
-GET {{HotelApi_HostAddress}}/weatherforecast/
+GET {{HotelApi_HostAddress}}/api/Hotels
+
 Accept: application/json
+
+###
+
+GET {{HotelApi_HostAddress}}/api/Hotels/
+
+Accept: application/json
+
+###
+
+DELETE {{HotelApi_HostAddress}}/api/Hotels/2
+Accept: application/json
+
+###
+
+PUT {{HotelApi_HostAddress}}/api/Hotels/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Name": "erharb",
+  "StreetAddress": "456 New St",
+  "City": "New City",
+  "Country": "New Country",
+  "PostalCode": "54321"
+}
+
+###
+
+POST {{HotelApi_HostAddress}}/api/Hotels
+Content-Type: application/json
+Accept: application/json
+{
+    "name": "Novi Novcati Hotel",
+    "StreetAddress": "Kino ulica 2",
+    "City": "Bilje",
+    "Country": "Hrvatska",
+    "PostalCode": "31000"
+}
 
 ###
