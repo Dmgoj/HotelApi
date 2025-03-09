@@ -34,7 +34,6 @@ namespace HotelApi.Controllers
             return Ok(hotels);
         }
 
-
         // GET: api/Hotels/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Hotel>> GetHotel(int id)
@@ -59,8 +58,6 @@ namespace HotelApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutHotel(int id, HotelUpdateDto hotelDto)
         {
-           
-
            await _service.UpdateHotelAsync(id, hotelDto);
 
             return NoContent();
