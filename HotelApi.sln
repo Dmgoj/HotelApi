@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelApi", "HotelApi\HotelApi.csproj", "{46E34C1C-6E06-44AB-90EB-A123B746593A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{BB40D9EF-7387-4710-A249-DC2999681744}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{06C57E17-E355-4831-939F-FDA252FA373C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{34BE44A2-17A8-4BF8-B009-3DFE1908B0D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{DD8AC94D-D715-4743-A90E-FE30EAD18B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Contracts", "Services.Contracts\Services.Contracts.csproj", "{3F63AE0B-4066-43E9-ABDC-E6F5620CE339}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{4DEE7FAF-B03D-4AA4-B4A4-534F914BEA6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{06C57E17-E355-4831-939F-FDA252FA373C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06C57E17-E355-4831-939F-FDA252FA373C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06C57E17-E355-4831-939F-FDA252FA373C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34BE44A2-17A8-4BF8-B009-3DFE1908B0D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BE44A2-17A8-4BF8-B009-3DFE1908B0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34BE44A2-17A8-4BF8-B009-3DFE1908B0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34BE44A2-17A8-4BF8-B009-3DFE1908B0D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD8AC94D-D715-4743-A90E-FE30EAD18B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD8AC94D-D715-4743-A90E-FE30EAD18B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD8AC94D-D715-4743-A90E-FE30EAD18B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD8AC94D-D715-4743-A90E-FE30EAD18B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F63AE0B-4066-43E9-ABDC-E6F5620CE339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F63AE0B-4066-43E9-ABDC-E6F5620CE339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F63AE0B-4066-43E9-ABDC-E6F5620CE339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F63AE0B-4066-43E9-ABDC-E6F5620CE339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DEE7FAF-B03D-4AA4-B4A4-534F914BEA6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DEE7FAF-B03D-4AA4-B4A4-534F914BEA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DEE7FAF-B03D-4AA4-B4A4-534F914BEA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DEE7FAF-B03D-4AA4-B4A4-534F914BEA6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
