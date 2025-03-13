@@ -60,21 +60,22 @@ API will be available at:
 ## 🏨 API Endpoints  
 
 ### 🏢 Hotels
-| Method | Endpoint                 | Description          |
-|--------|--------------------------|----------------------|
+| Method | Endpoint                 | Description         |
+|--------|--------------------------|---------------------|
 | GET    | `/api/Hotels`            | Get all hotels      |
 | POST   | `/api/Hotels`            | Add a new hotel     |
 | GET    | `/api/Hotels/{id}`       | Get hotel by ID     |
 
 ### 🏠 Rooms
-| Method | Endpoint                        | Description             |
-|--------|---------------------------------|-------------------------|
-| GET    | `/api/Hotels/{hotelId}/Rooms`   | Get rooms in a hotel   |
-| POST   | `/api/Hotels/{hotelId}/Rooms`   | Add a room to a hotel  |
+| Method | Endpoint                            | Description            |
+|--------|-------------------------------------|------------------------|
+| GET    | `/api/Hotels/{hotelId}/Rooms`       | Get rooms in a hotel   |
+| POST   | `/api/Hotels/{hotelId}/Rooms`       | Add a room to a hotel  |
+| GET    | `/api/Hotels/{hotelId}/Rooms{id}`   | Get room by ID         |
 
-### 🏷️ Reservations
-| Method | Endpoint                                      | Description             |
-|--------|---------------------------------------------|-------------------------|
-| POST   | `/api/Reservations`                        | Create a reservation   |
+### 🏷️ Reservations (in progress)
+| Method | Endpoint                                  | Description            |
+|--------|-------------------------------------------|------------------------|
+| POST   | `/api/Reservations`                       | Create a reservation   |
 | GET    | `/api/Reservations/{id}`                  | Get reservation by ID  |
 | DELETE | `/api/Reservations/{id}`                  | Cancel reservation     |
