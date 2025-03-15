@@ -1,4 +1,4 @@
-# 🏨 Hotel API  
+# 🏨 Hotel API  (wip)
 *A RESTful API for managing hotels, rooms, and reservations.*
 
 ---
