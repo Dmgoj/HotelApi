@@ -12,10 +12,10 @@ namespace Services.Contracts
 {
     public interface IRoomService
     {
-        Task<Room> GetRoomAsync(int roomId, bool trackChanges);
-        Task<PaginatedList<RoomReadDto>> GetAllRooms();
-        Task CreateRoom(RoomCreateDto room);
-        Task UpdateRoom(int roomId, RoomUpdateDto room);
+        Task<RoomReadDto> GetRoomAsync(int roomId, bool trackChanges);
+        Task<PaginatedList<RoomReadDto>> GetAllRoomsAsync(int hotelId, int pageIndex, int pageSize, bool trackChanges);
+        Task<Room> CreateRoomAsync(int hotelId, RoomCreateDto room);
+        Task UpdateRoomAsync(int roomId, RoomUpdateDto room);
         Task DeleteRoom(int roomId);
 
     }
