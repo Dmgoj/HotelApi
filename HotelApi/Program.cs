@@ -13,8 +13,10 @@ builder.Services.AddDbContext<RepositoryContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
-
 builder.Services.AddScoped<IHotelService, HotelService>();
+
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+builder.Services.AddScoped<IRoomService, RoomService>();
 
 var app = builder.Build();
 
