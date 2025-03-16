@@ -10,7 +10,7 @@ namespace Contracts
 {
     public interface IRoomRepository
     {
-        public Task<PaginatedList<Room>> GetAllRoomsAsync(int pageIndex, int pageSize, bool trackChanges);
+        public Task<PaginatedList<Room>> GetAllRoomsAsync(int hotelId, int pageIndex, int pageSize, bool trackChanges);
         public Task<Room> GetRoomAsync(int roomId, bool trackChanges);
 
         public Task CreateRoomAsync(Room room);
