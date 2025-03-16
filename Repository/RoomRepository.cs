@@ -17,30 +17,35 @@ namespace Repository
         {
             _context = repositoryContext;
         }
-        public Task CreateRoomAsync(Room room)
+        public async Task CreateRoomAsync(Room room)
         {
             _context.Rooms.Add(room);
-            return _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public Task DeleteRoomAsync(Room room)
+        public async Task DeleteRoomAsync(Room room)
         {
             _context.Rooms.Remove(room);
-            return _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public Task<PaginatedList<Room>> GetAllRoomsAsync(int pageIndex, int pageSize, bool trackChanges)
+        public Task<PaginatedList<Room>> GetAllRoomsAsync(int hotelId, int pageIndex, int pageSize, bool trackChanges)
         {
             var query = trackChanges ? _context.Rooms : _context.Rooms.AsNoTracking();
-            return  PaginatedList<Room>.CreateAsync(_context.Rooms.AsQueryable(), pageIndex, pageSize);
-
+            query = query.Where(r => r.HotelId == hotelId).Include(r=>r.Hotel);
+            return  PaginatedList<Room>.CreateAsync(query, pageIndex, pageSize);
         }
 
-        public  Task<Room> GetRoomAsync(int roomId, bool trackChanges)
+        public async Task<Room> GetRoomAsync(int roomId, bool trackChanges)
         {
-            return  _context.Rooms
-           .AsTracking(trackChanges ? QueryTrackingBehavior.TrackAll : QueryTrackingBehavior.NoTracking)
-           .FirstOrDefaultAsync(h => h.Id == roomId);
+            IQueryable<Room> query = _context.Rooms.Include(r => r.Hotel);
+
+            if (!trackChanges)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.FirstOrDefaultAsync(r => r.Id == roomId);
         }
 
         public Task UpdateRoomAsync(Room room)
