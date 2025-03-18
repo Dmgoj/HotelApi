@@ -30,6 +30,11 @@ namespace HotelApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<RoomReadDto>> GetRoom(int id)
         {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid room ID.");
+            }
+
             try
             {
                 var room = await _roomService.GetRoomAsync(id, false);
@@ -48,8 +53,23 @@ namespace HotelApi.Controllers
         [HttpPost]
         public async Task<ActionResult<RoomReadDto>> PostRoom(int hotelId, RoomCreateDto roomDto)
         {
-            var room = await _roomService.CreateRoomAsync(hotelId,roomDto);
-            return CreatedAtAction("GetRoom", new {hotelId = hotelId, id = room.Id }, room);
+            if (hotelId <= 0)
+            {
+                return BadRequest("Invalid hotel ID.");
+            }
+            try
+            {
+                var room = await _roomService.CreateRoomAsync(hotelId, roomDto);
+                return CreatedAtAction("GetRoom", new { hotelId = hotelId, id = room.Id }, room);
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound($"Hotel with ID {hotelId} not found.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
 
         [HttpDelete("{id}")]
@@ -60,11 +80,20 @@ namespace HotelApi.Controllers
                 return BadRequest("Invalid room ID.");
             }
 
-            await _roomService.DeleteRoom(id);
-
-            return NoContent();
+            try
+            {
+                await _roomService.DeleteRoom(id);
+                return NoContent();
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
-
         [HttpPut("{id}")]
         public async Task<ActionResult> PutRoom(int id, RoomUpdateDto roomDto)
         {
@@ -72,10 +101,19 @@ namespace HotelApi.Controllers
             {
                 return BadRequest();
             }
-
-            await _roomService.UpdateRoomAsync(id, roomDto);
-
-            return NoContent();
+            try
+            {
+                await _roomService.UpdateRoomAsync(id, roomDto);
+                return NoContent();
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
 
     }
