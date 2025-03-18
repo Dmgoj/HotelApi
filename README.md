@@ -66,7 +66,7 @@ API will be available at:
 | POST   | `/api/Hotels`            | Add a new hotel     |
 | GET    | `/api/Hotels/{id}`       | Get hotel by ID     |
 
-### 🏠 Rooms
+### 🛏️ Rooms
 | Method | Endpoint                            | Description            |
 |--------|-------------------------------------|------------------------|
 | GET    | `/api/Hotels/{hotelId}/Rooms`       | Get rooms in a hotel   |
