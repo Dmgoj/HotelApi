@@ -16,8 +16,6 @@ namespace Entities.Models
     public class Reservation
     {
         public int Id { get; set; }
-        public int GuestId { get; set; }
-        public Guest Guest { get; set; }
         public int RoomId { get; set; }
         public Room Room { get; set; }
         public int HotelId { get; set; }
@@ -25,6 +23,7 @@ namespace Entities.Models
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
         public decimal TotalPrice { get; set; }
-        public ReservationStatus ReservationStatus { get; set; } 
+        public ReservationStatus ReservationStatus { get; set; }
+        public ICollection<ReservationGuest> ReservationGuests { get; set; } = new List<ReservationGuest>();
     }
 }
